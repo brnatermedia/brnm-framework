@@ -1,5 +1,5 @@
 brnatermedia Theme Framework
-latest vers. 2.6.4
+latest vers. 2.5.3
 @author BRNater Media
 @url http://www.brnatermedia.com
 
@@ -9,190 +9,13 @@ latest vers. 2.6.4
 	Update files as necessary, then notate here.
 	For any updated files, change their "@since" to latest version.
 	Update latest version (top) and version # in parent stylesheet.
-
+	
 	Under "Files Changed", "+" sign means file was edited and renamed,
 	not just renamed. Otherwise it was just edited.
 */
 
 
 CHANGELOG -------
-
-/* 2.6.4 - 13 Sept 2015
---------------------------------------------------- */
-Framework wrapped into plugin
-	-- each page developed into its own class as necessary
-	-- brnm_register_options_pages() renamed to register_options_pages()
-	-- developer page setup updated to automatically show correct page once super user is set
-	-- paths to files updated as result of move to plugin
-	-- google fonts removed from admin
-	-- icomoon fonts included in plugin
-
-	FILES CHANGED
-		advanced-custom-fields-setup.php
-		browsers.php
-		debug.php
-		enqueues.php
-		head.php
-		helpers.php
-		includes/css/base.css
-
-		custom2015/functions.php
-		custom2015/header.php
-
-	FILES REMOVED
-		changelog.txt
-		
-		custom2015/functions-custom.php
-		custom2015/fonts/icomoon*
-		
-	FILES ADDED
-		readme.md
-
-
-/* 2.6.2 - 17 July 2015
---------------------------------------------------- */
-Security Fixes & Improvements
-	-- New window link functionality added as option in customizations
-	-- Media queries perfected for smaller desktops and tablets
-	-- Notes added to better understanding of Dev and Debug modes
-	-- Dev and Debug classes added to html class for debugging & live site improvement purposes
-	-- Detection added to show error when 'debug' class is being used outside of debug mode (hiding certain elements from public view)
-	-- Maintenance functionality moved from head.php to its own file
-	-- Fix in maintenance to unset sessions causing logged out users to be stuck on the Maintenance Page
-	-- Maintenance mode updated to only run when in debug mode.
-	-- Customize.php page removed from all menu views
-	-- Removed deprecated code calling to remove "New+" content button from admin bar
-	-- Shortcut link to Developer options added to admin menu
-	-- Removed duplicate div.entry-meta tag
-	-- content-* files updated with session functions and updated footer.entry-meta tags
-
-	FILES ADDED
-		brnm-framework/maintenance.php
-
-	FILES CHANGED
-		brnm-framework/customizations.txt
-		brnm-framework/browsers.txt
-		brnm-framework/head.php
-		brnm-framework/helpers.php
-		content.php
-		content-audio.php
-		content-quote.php
-		content-video.php
-		functions.php
-		loop.php
-		style.css
-
-
-/* 2.6.1 - 05 July 2015
---------------------------------------------------- */
-Security Fixes
-	-- Basic and developer options uncommented
-	-- Secured/sanitized input on brnm_the_excerpt(), brnm_sharing_buttons()
-	-- new function for finding even numbers: brnm_is_even()
-	-- brnm_print_meta() updated to accept arguments on displaying the date and author
-	-- interior static header image simplified
-	-- brnm_sharing_buttons() css glitch fixed
-	-- glitch fixed where sidebar wasn't showing on post singles, archives, and search pages
-	-- css media query glitch affecting tablets and mobile devices fixed
-	-- float and text align default styling added
-
-	FILES CHANGED
-		brnm-framework/acf/basic.php
-		brnm-framework/acf/developer.php
-		footer.php
-		functions.php
-		functions-custom.php
-		header.php
-		sidebar.php
-		style.php
-		theme-functions.php
-
-
-/* 2.6 - 01 July 2015
---------------------------------------------------- */
-Feature Enhancements
-	-- sharable icons added to General options
-	-- nav toggle for mobile menus included by default
-	-- responsive youtube videos included by default
-	-- uniform static header area added
-	-- custom google map functionality added
-	-- contact page map w/o need for MapPress added
-	-- more flexible way of displaying excerpts includes switch bt 'more' and excerpt concepts
-	-- error fixed that was breaking the custom post type shortcode function
-	-- media queries simplified
-	-- maintenance mode now available
-
-	FILES ADDED
-		brnm-framework/acf/acf-basic-2.6.xml
-		brnm-framework/acf/acf-developer-2.6.xml
-		lib/static.php
-
-	FILES CHANGED
-		brnm-framework/acf/acf-basic.php
-		brnm-framework/acf/acf-developer.php
-		brnm-framework/head.php
-		brnm-framework/theme-functions.php
-		functions.php
-		functions-custom.php
-		lib/cpt-EXAMPLE.php
-		lib/custom-js.php
-		style.php
-
-
-/* 2.5.41 - 11 Jun 2015
---------------------------------------------------- */
-Stability Improvements
-	-- corrected font enqueue error to show only on front-facing pages, not admin
-	-- re-enabled basic acf settings page
-	-- removed default floats across footers and comments box
-
-	FILES CHANGED
-		functions.php
-		helpers.php
-		style.css
-
-
-/* 2.5.4 - 22 Apr 2015
---------------------------------------------------- */
-Feature Enhancements & Stability Improvements
-	-- button short-code moved to functions-custom.php for easier updating per theme
-	-- Shortcut button added to the tinyMCE editor for easier access
-	-- Size and color attributes removed from button shortcode
-	-- Disabled crop from logo; now just resizes w/o cropping
-	-- icomoon fonts updated: vine, apple, foursquare added
-	-- office short-code setup html optimized for greater flexibility; also uses
-		brnm_session() over get_option() now
-	-- brnm_the_office() and brnm_office_fields_switch() updated to include option to
-		show/hide related icon
-	-- following functions deprecated: brnm_sc_button1, brnm_sc_button2, brnm_sc_office,
-		brnm_c_main_phone,, brnm_c_alt_phone, brnm_c_fax_phone, brnm_c_email, brnm_c_address,
-		brnm_c_hours, brnm_display_page_titles
-	-- default template no longer shows sidebar; switched with page-with-sidebar.php
-	-- slider updated to take session functions
-
-	FILES CHANGED
-		acf/acf-developer.php
-		deprecated.php
-		footer.php
-		fonts/*
-		functions.php
-		functions-custom.php
-		head.php
-		helpers.php
-		layerslider.php
-		shortcodes.php
-		style.css
-		theme-functions.php
-		theme-setup.php
-
-	FILES ADDED
-		acf/acf-developer-2.5.4.xml
-		includes/js/base/wysiwyg-buttons.js
-		page-width-sidebar.php
-
-	FILES REMOVED
-		page-fullwidth.php
-
 
 /* 2.5.3 - 10 Feb 2015
 --------------------------------------------------- */
@@ -202,7 +25,7 @@ Feature Enhancements & Stability Improvements
 	-- added back "body_close()" action incorrectly removed from footer
 	-- tightened loopholes in collecting session data
 	-- js file now PHP dynamic
-
+	
 	FILES CHANGED
 		analytics.php
 		enqueues.php
@@ -211,8 +34,8 @@ Feature Enhancements & Stability Improvements
 		sessions.php
 		shortcodes.php
 		theme-functions.php
-
-
+		
+	
 /* 2.5.2 - 20 Jan 2015
 --------------------------------------------------- */
 Feature Enhancements & Stability Improvements
@@ -237,10 +60,10 @@ Feature Enhancements & Stability Improvements
 	-- brnm_enqueue_styles() deprecated
 	-- brnm_ie6_style() deprecated
 	-- dev_print() deprecated
-
+	
 	FILES ADDED
 		brnm-framework/theme-functions.php
-
+		
 	FILES CHANGED
 		advanced-custom-fields-setup.php
 		analytics.php
@@ -255,7 +78,7 @@ Feature Enhancements & Stability Improvements
 		shortcodes.php
 		single.php
 		style.css
-
+		
 
 /* 2.5.1 - 17 Dec 2014
 --------------------------------------------------- */
@@ -266,11 +89,11 @@ Stability improvements
 	-- deprecated functions will be moved to deprecated file from now on. Functions not used at all will be deleted.
 	-- base styles removed from enqueue process
 	-- framework version added to the "Right Now" dashboard widget
-
+	
 	FILES ADDED
 		brnm-framework/deprecated/ (folder)
 		brnm-framework/deprecated/deprecated.php
-
+		
 	FILES CHANGED
 		brnm-framework/activations.php
 		brnm-framework/customizations.txt
@@ -278,7 +101,7 @@ Stability improvements
 		brnm-framework/helpers.php
 		functions.php
 		part-front.php
-
+			
 
 /* 2.5 - 5 Dec 2014
 --------------------------------------------------- */
@@ -296,11 +119,11 @@ Stability improvements and bug fixes to the framework
 	-- added ability to create custom widget areas from custom functions
 	-- added ability to toggle display of widgets per post or page
 	-- google map now replaces header image by default on contact page
-
+	
 	FILES ADDED
 		lib/custom.js
 		brnm-framework/includes/plugins/display-widgets
-
+		
 	FILES CHANGED
 		footer.php
 		functions.php
@@ -313,9 +136,9 @@ Stability improvements and bug fixes to the framework
 		brnm-framework/includes/css/base.css
 		brnm-framework/theme-setup.php
 		style.css
-
+		
 	FILES REMOVED
-
+	
 
 /* 2.4.4 - 16 Nov 2014
 --------------------------------------------------- */
@@ -328,13 +151,13 @@ ACF fixes & improvements
 	-- streamlined CSS entry-header classes
 	-- site-description moved within the logo
 	-- client logo added to dashboard
-
+	
 	FILES ADDED
 		brnm-framework/acf/acf-developer.php
 		brnm-framework/acf/acf-developer-2.4.4.xml
 		brnm-framework/acf/acf-slider-options.php
 		brnm-framework/acf/acf-slider-options-2.4.4.xml
-
+	
 	FILES CHANGED
 		brnm-framework/advanced-custom-fields-setup.php
 		brnm-framework/debug.php
@@ -348,19 +171,19 @@ ACF fixes & improvements
 		image.php
 		search.php
 		tag.php
-
+	
 	FILES DEPRECIATED
 		brnm-framework/acf/front-slider-options.php
-
+		
 	FUTURE EDITS
 		-- export acf post-format options and save as xml file in brnm-framework/acf folder
-
+	
 
 /* 2.4.3 - 27 Oct 2014
 --------------------------------------------------- */
 Minor fixes and improvements
 	-- corrected issue where footer wasn't calling the correct full-width template file.
-
+	
 	FILES CHANGED
 		footer.php
 
@@ -375,7 +198,7 @@ parts to be included into a given page.
 	-- post formats better acclimated to receive the single post
 	-- found no use for the aside post format
 	-- corrected a default value for video post format options
-
+	
 	FILES CHANGED
 		brnm-framework/acf/format-options-video.php
 		content-audio.php
@@ -385,18 +208,18 @@ parts to be included into a given page.
 		page.php
 		page-fullwidth.php (renamed from 'page-full-width.php')
 		part-front.php (renamed from 'content-front.php')
-
+		
 	FILES REMOVED
 		content-aside.php
-
+	
 	FILES ADDED
 		brnm-framework/acf/global-items.php
 		brnm-framework/acf/acf-format-options-video-2.4.2.xml
 		brnm-framework/acf/acf-global-items-2.4.2.xml
-
+		
 	FUTURE NOTES:
 		-- export acf options and save as xml file in brnm-framework/acf folder
-
+		
 
 /* 2.4.1 - 25 Sep 2014
 --------------------------------------------------- */
@@ -408,13 +231,13 @@ the theme. Responsiveness updated.
 	-- permalink options shown only in full and debug modes
 	-- responsive enabled by default
 	-- 'interior' class added to html, opposite of 'front'
-
+	
 	FILES CHANGED
 		brnm-framework/browsers.php
 		brnm-framework/head.php
 		brnm-framework/theme-setup.php
 		functions.php
-
+		
 	FILES ADDED
 		brnm-framework/acf/developer.php
 		brnm-framework/acf/format-options-audio.php
@@ -450,15 +273,15 @@ and empower Google Analytics and SEO efforts.
 	-- added shortcode content button that can be customized via custom CSS
 	-- improved support for enabling titles on pages and different post types
 	-- improved support for post formats, including acf functionality and better front-end displays
-
+	
 	FILES CHANGED:
 		brnm-framework/advanced-custom-fields-setup.php
 		brnm-framework/cpt.php
 		brnm-framework/customizations.txt
 		brnm-framework/head.php
 		brnm-framework/helpers.php
-		brnm-framework/includes/css/base.css
-		brnm-framework/includes/css/debug.css
+		brnm-framework/includes/css/base.css 
+		brnm-framework/includes/css/debug.css 
 		brnm-framework/lib/base.css
 		brnm-framework/theme-setup.php
 		brnm-framework/sidebars.php
@@ -467,7 +290,7 @@ and empower Google Analytics and SEO efforts.
 		functions-custom.php
 		header.php
 		sidebar.php
-
+		
 	FILES ADDED:
 		brnm-framework/analytics.php
 		brnm-framework/shortcodes.php
@@ -476,7 +299,7 @@ and empower Google Analytics and SEO efforts.
 		content-none.php
 		content-quote.php
 		content-video.php
-
+		
 	FILES REMOVED:
 		brnm-framework/sidebars.php
 		lib/static-image.php
@@ -490,16 +313,16 @@ Bug fixes from last significant update.
 	-- responsive design option enable for dev options
 	-- new default, overwrittable styles added
 	-- stage/hero area structure updated
-
+	
 	FILES MODIFIED:
 		enqueues.php
 		head.php
 		header.php
 		login.php
 		style.css
-
+		
 	FILES ADDED:
-		cpt.php
+		cpt.php		
 
 
 /* 2.2 - 23 July 2014
@@ -515,7 +338,7 @@ per website dev, and what's supposed to stay within the framework untouched.
 	-- theme files updated to be HTML5 compliant (as best as possible)
 	-- removed actions functionality
 	-- created file of refrence functions which can be added as needed
-
+	
 	FILES MODIFIED:
 		all theme files
 		admin.css
@@ -525,17 +348,17 @@ per website dev, and what's supposed to stay within the framework untouched.
 		menus.php
 		sidebars.php
 		theme-setup.php
-
+		
 	FILES REMOVED:
 		actions.php
 		cleanup.php
 		debug-admin.css
 		functions-actions.php
-
+		
 	FILES ADDED:
 		customizations.txt
 		login.php
-
+		
 
 /* 2.1 - 15 May 2014 (Plower)
 --------------------------------------------------- */
@@ -560,12 +383,12 @@ Removed child theme framework; framing is solely based on template directory
 		parent/js/admin-sidebar-switcher.js
 		parent/rtl.css
 		parent/search.php
-
+		
 	FILES ADDED:
 		js/custom.js
 		js/browserdetect.js
 		js/redcm-android-nav-fix.js
-
+	
 	FILES CHANGED:
 		functions.php
 		js/redcm.js ( + renamed: brnm-framework/js/base.js )
@@ -576,7 +399,7 @@ Removed child theme framework; framing is solely based on template directory
 		lib/sidebars.php ( + renamed: brnm-framework/sidebars.php )
 		loop.php
 		sidebar.php
-
+	
 
 /* 1.3.1 - 24 Oct 2013
 --------------------------------------------------- */

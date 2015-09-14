@@ -1,0 +1,11 @@
+/**
+  * Admin.css
+  * 
+  * Styling for displaying particular elements
+  * on top of core styling for the admin user.
+  * @since brnm 2.1
+ **/
+
+
+#tinymce { font-family: 'Lato', 'Georgia', 'Times New Roman'; font-weight: 300; font-size: 15px; }
+#wp-admin-bar-debug-admin a.ab-item { color: red; }

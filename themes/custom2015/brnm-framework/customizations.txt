@@ -1,0 +1,93 @@
+/**
+  * Customizations
+  * 
+  * These functions are optional additions to any custom
+  * theme. They can be added wherever seen fit and
+  * customized as needed.
+  * @since brnm 2.2
+  * @lastmodified brnm 2.5.1
+ **/
+
+
+/* Scroll to top (js)
+--------------------------------------------------- */
+//html
+<a href="#" id="top" class="">To Top</a>
+
+//JS
+$('a#top').click(function(e) {
+	e.preventDefault();
+	$('html, body').animate({ scrollTop: 0 }, 1000);
+});
+
+
+/* FancyBox enqueues (php)
+ * @lastmodified 2.5.1
+-------------------------------------------------------- */
+// requires uploading 'fancybox' folder to the 'lib' folder
+function brnm_fancybox_enqueues() {
+	wp_register_script('fancyboxpack', get_template_directory_uri().'/lib/fancybox/jquery.fancybox.pack.js', array('jquery'), '1.3.4', true);
+	wp_register_script('fancyboxmedia', get_template_directory_uri().'/lib/fancybox/jquery.fancybox-media.js', array('fancyboxpack'), '1.3.4', true);
+	wp_register_style('fancyboxcss', get_template_directory_uri().'/lib/fancybox/jquery.fancybox.css', array('themecss'), '1.3.4', 'all');
+
+	if(is_front_page()) {
+		wp_enqueue_script('fancyboxpack');
+		wp_enqueue_script('fancyboxmedia');
+		wp_enqueue_style('fancyboxcss');
+	}
+}
+add_action('wp_enqueue_scripts', 'brnm_fancybox_enqueues');
+
+
+/* Custom Search Form (php)
+-------------------------------------------------------- */
+// Notice: this overrides the html form from framework/theme-setup.php
+function brnm_custom_search_form() {
+	$form = '<form role="search" method="get" class="search-form" action="<?php echo home_url( \'/\' ); ?>">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for:" />
+		</label>
+		<input type="submit" class="search-submit" value="Go" />
+		</form>';
+	return $form;
+}
+add_filter('get_search_form', 'brnm_custom_search_form');
+
+
+/* Custom Excerpt options
+-------------------------------------------------------- */
+function brnm_excerpt_more( $more ) {
+	global $post;
+	$link = get_permalink($post->ID);
+	return '<br /><a class="more" href="'.$link.'">read more</a>';
+}
+add_filter('excerpt_more', 'brnm_excerpt_more');
+
+
+/* Force SSL
+-------------------------------------------------------- */
+function brnm_force_ssl() {
+	if(get_option('home') == 'https://www.websiteurl.com') {
+		if(!is_ssl()) {
+			header('HTTP/1.1 301 Moved Permanently');
+			header("Location: https://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"]);
+			
+			exit();			
+		}
+	} else {
+		return;
+	}
+}
+add_action('template_redirect', 'brnm_force_ssl', 9999);
+
+
+/* Custom Filter to wrap HTML in span tags
+-------------------------------------------------------- */
+function brnm_1st_word_span($text) {
+	$modified =  explode(' ', $text);
+	$modified[0] = '<span>'. $modified[0] .'</span>';
+	$newtitle = implode(' ', $modified);
+	
+	echo $newtitle;
+}

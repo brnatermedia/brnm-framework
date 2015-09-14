@@ -1,0 +1,31 @@
+custom2014 changelog
+latest vers. 1.0
+@author BRNater Media
+@url http://www.brnatermedia.com
+
+
+/* When Updating the changelog:
+	Copy formatting from latest changelog below.
+	Update files as necessary, then notate here.
+	For any updated files, change their "@since" to latest version.
+	Update latest version (top) and version # in parent stylesheet.
+	
+	Under "Files Changed", "+" sign means file was edited and renamed,
+	not just renamed. Otherwise it was just edited.
+*/
+
+
+CHANGELOG -------
+
+/* 1.0.0 - 0000 MMM DD
+--------------------------------------------------- */
+Overall Description
+	-- Detail 1
+	-- Detail 2
+	
+	FILES MODIFIED:
+		functions-custom.php
+		
+	FILES ADDED:
+	
+	FILES REMOVED:

@@ -1,0 +1,160 @@
+/**
+ * Base CSS
+ *
+ * Reset CSS to precede the theme styling.
+ * Includes resets, base styling, and responsive concepts
+ * @since brnatermedia 1.3
+ * @modified brnatermedia 2.4
+**/
+
+
+/* Reset
+-------------------------------------------------------- */
+/* HTML Reset, including HTML5 Resets: http://meyerweb.com/eric/tools/css/reset/ | v2.0 | 20110126 | License: none (public domain) */
+/* Add { position: relative } to set most everything with a relative position | Ed Nailor via Chris Coyer: http://css-tricks.com/things-it-might-be-funuseful-to-try-the-universal-selector-on/ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; position: relative; }
+ol, ul { list-style: none; position: relative; }
+blockquote, q { quotes: none; position: relative; margin: 0 2em; font-style: italic; font-size: 0.875em; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; position: relative; }
+
+/* Image Replacement: http://nicolasgallagher.com/another-css-image-replacement-technique/ */
+.ir { font: 0/0 a; text-shadow: none; color: transparent; }
+
+/* Micro Clearfix: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.cf:before, .cf:after { content: " "; display: table; }
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+
+/* Base
+-------------------------------------------------------- */
+/* Base Typography */
+html { font-size:16px; line-height: 1.231; font-family: sans-serif; *font-size:small; }
+body { font-size: 1em; }
+select, input, textarea, button { font-size:99%; font-family: sans-serif; }
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+/* Base Styles */
+body, select, input, textarea { color: #000; }
+h1,h2,h3,h4,h5,h6 { font-weight: bold; }
+body { overflow-y: scroll; }
+a, a:active, a:visited { color: #607890; }
+a:hover { color: #036; }
+a:active, a:visited, a:hover, input, textarea, div { outline: none; }
+p { padding: 0 0 1em; line-height: 1.5em; }
+small { font-size: 85%; }
+b, strong, th { font-weight: bold; }
+td, td img { vertical-align: top; } 
+i, em { font-style: italic; }
+address { font-style: italic; padding: 0 0 1em 0; }
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+pre { padding: 15px; white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; }
+textarea { overflow: auto; } 
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+button, input, select, textarea { margin: 0; width: 98%; padding: 1%; }
+input[type="text"] { width: 95%; }
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid { border-radius: 1px;-moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red;}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+::-moz-selection{ background: #fefc78; color:#000; text-shadow: none; }
+::selection { background:#fefc78; color:#000; text-shadow: none; } 
+a:link { -webkit-tap-highlight-color: #FF5E99; } 
+button {width: auto; overflow: visible;}
+.ie7 img {-ms-interpolation-mode: bicubic;}
+.visuallyhidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */clip: rect(1px, 1px, 1px, 1px); }
+
+@media print {
+  * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a:after { content: " (" attr(href) ")"; } 
+  abbr:after { content: " (" attr(title) ")"; }
+  .ir a:after { content: ""; }  
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
+
+/* Structure */
+#inner { overflow-x: hidden; /* useful for divs that may extend beyond viewport causing horizontal scrollbar */ } 
+#container { display: block; margin: 0 auto; } /* set the width in style.css */
+#main { float: left; margin: 0; width: 75%; }
+#main.full-width { float: none; margin: 0; width: 100%; }
+#secondary { float: right; overflow: hidden; width: 20%; }
+#page-footer { clear: both; display: block; width: 100%; }
+
+/* Increase the size of the content area for templates without sidebars */
+.full-width #main-content, .image-attachment #main-content,.error404 #main-content { margin: 0; }
+
+/* Alignment */
+.alignleft { display: inline; float: left; }
+.alignright { display: inline; float: right; }
+.aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
+
+/* Header */
+#site-title { font-size: 2em; }
+#site-description { font-size: 1em;  }
+
+/* Menu - Utility */
+#nav-utility li { display: inline; padding: 0 1em; }
+#nav-utility li a { text-decoration: none; }
+#nav-utility li a:hover { text-decoration: underline; }
+
+/* Menu - Primary */
+#nav-primary { background: #eee; display: block; float: left; margin: 0 auto; width: 100%; }
+#nav-primary ul { list-style: none; margin: 0; padding-left: 0; } 
+#nav-primary li { float: left; position: relative; }
+#nav-primary a { display: block; line-height: 2em; padding: 0 1em; text-decoration: none; } 
+#nav-primary ul ul { box-shadow: 0 3px 3px rgba(0,0,0,0.2); -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2); -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2); display: none; float: left; position: absolute; top: 2em; left: 0; z-index: 99999; }
+#nav-primary ul ul ul { left: 100%; top: 0; }
+#nav-primary ul ul a { background: #333; color: #fff; line-height: 1em; padding: .5em .5em .5em 1em; width: 10em; height: auto; }
+#nav-primary li:hover > a, #nav-primary ul ul :hover > a { background: red; color: #fff; }
+#nav-primary ul ul a:hover { background: #000; }
+#nav-primary ul li:hover > ul { display: block; }
+
+/* Content */
+#main-content nav { display: block; overflow: hidden; }
+#main-content nav .nav-previous { float: left; width: 50%; }
+#main-content nav .nav-next { float: right; text-align: right; width: 50%; }
+#main-content #nav-above { display: none; }
+.paged #main-content #nav-above, .single #main-content #nav-above { display: block; }
+#nav-below { margin: 1em 0 0; }
+.page-link { margin: 0 0 1em; clear: both; }
+.entry-content ol { list-style: decimal outside; margin-left: 2em; margin-bottom: 1em; }
+.entry-content ul { list-style: disc outside; margin-left: 2em; margin-bottom: 1em; }
+
+/* Images */
+img.size-auto, img.size-full, img.size-large, img.size-medium, .attachment img, .widget-section img { max-width: 100%;  height: auto;  }
+img.alignleft { margin-right: 1em; }
+img.alignright { margin-left: 1em; }
+.wp-caption { padding: .5em; text-align: center; }
+.wp-caption img { margin: .25em; }
+.wp-caption .wp-caption-text { margin: .5em; }
+
+/* Forms - Class for labelling required form items */
+.required { color: #cc0033; }
+
+/* Comments */
+article.comment { display: block; }
+#respond input[type=text] { float: left; margin: 0 1em 0 0; width: 60%; }
+#respond .comment-form-comment label {display: none; }
+#respond textarea { margin: 0 1em 1em 0; float: left; width: 80%;}
+#respond .form-allowed-tags { clear: both; width: 80%; }
+#respond .form-allowed-tags code { display: block; }
+
+/* Footer */
+#page-footer { }
+.footer-left, .footer-right { max-width: 50%; }
+.footer-left { float: left; }
+.footer-right { float: right; }
