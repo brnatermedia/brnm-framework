@@ -1,0 +1,12 @@
+/**
+  * Debug Styling
+  * 
+  * Styling for displaying particular elements
+  * while debug mode is enabled.
+  * @since brnatermedia 2.1
+ **/
+
+
+.debug-message { position: fixed; z-index: 99999; bottom: 0; left: 0; width: 100%; border-top: 2px solid red; border-bottom: 2px solid red; background: #000; color: #fff; text-align: center; line-height: 2em; }
+body { padding: 0 0 40px; }
+
